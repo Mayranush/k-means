@@ -32,12 +32,9 @@ class MainLayout extends React.Component {
             confirmChangeInPopup={this.props.confirmChangeInPopup}
             passwordChangeInPopup={this.props.passwordChangeInPopup}
             changeAndResetPassword={this.props.changeAndResetPassword} />}
-        {(this.props.data.token || window.sessionStorage.getItem("token")) &&
-          <Menu cleanData={this.props.cleanData}
-                role={this.props.data.role} />}
-        {this.props.children}
-        {(this.props.data.token || window.sessionStorage.getItem("token")) &&
-        <Footer />}
+          <Menu cleanData={this.props.cleanData} />
+          {this.props.children}
+          <Footer />
       </main>
     )
   }
@@ -47,8 +44,6 @@ export default connect(
   state => ({data: state.general, popup: state.popup}),
   {
     ...generalActions,
-    ...passwordForgetActions,
-    ...signUpActions,
     ...popupActions
   }
 )(MainLayout);
