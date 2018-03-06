@@ -1,3 +1,4 @@
+
 import React from "react";
 import {projectDataActions} from "../../actions/index";
 import {Link} from "react-router/es6";
@@ -23,8 +24,6 @@ export class Menu extends React.Component {
   render() {
     return (
       <div>
-        menu
-        <div onClick={this.handleLogout}> logout</div>
       </div>
     )
   }

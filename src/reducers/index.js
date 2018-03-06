@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 
-//import general from "./generalReducer";
+import general from "./generalReducer";
 import popup from "./popupReducer";
 
 const appReducer = combineReducers({
-    //general
+    general,
     popup
 })
 

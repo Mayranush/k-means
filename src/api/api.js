@@ -12,25 +12,26 @@ let addHeaders = (token) => {
 
   if (token) {
     api = axios.create({
-      baseURL: "http://104.237.3.213:8888",
+      baseURL: "http://localhost:8081",
       headers: {"Authorization": tokenFromStore}
     });
   } else {
     api = axios.create({
-      baseURL: "http://104.237.3.213:8888"
+      baseURL: "http://localhost: 8081"
     });
   }
 
   return api;
 };
 
-const signIn = (obj) => {
+const cluster = (obj) => {
   addHeaders(false);
-  return api.post("/api/sign-in", obj);
+  console.log("heree",obj)
+  return api.post("/api/cluster", obj);
 };
 
 
 export default {
-  signIn
+  cluster
 };
 
