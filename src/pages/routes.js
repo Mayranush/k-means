@@ -36,7 +36,7 @@ const routes = {
       }
     },
     {
-      path: 'k-means-result',
+      path: 'clustered',
       //onEnter: dontRequireAuth,
       getComponent(location, cb) {
         System.import('pages/about')

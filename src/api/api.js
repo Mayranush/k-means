@@ -17,7 +17,7 @@ let addHeaders = (token) => {
     });
   } else {
     api = axios.create({
-      baseURL: "http://localhost: 8081"
+      baseURL: "http://localhost:8081"
     });
   }
 
@@ -26,7 +26,6 @@ let addHeaders = (token) => {
 
 const cluster = (obj) => {
   addHeaders(false);
-  console.log("heree",obj)
   return api.post("/api/cluster", obj);
 };
 

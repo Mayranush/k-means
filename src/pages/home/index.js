@@ -3,7 +3,7 @@ import {Header} from "../../components/header/header";
 import {connect} from "react-redux";
 import {generalActions} from "../../actions/index";
 import "./home.scss";
-
+import {Link} from "react-router/es6";
 export class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -11,8 +11,7 @@ export class Home extends React.Component {
   }
 
   handleSubmit() {
-    console.log(this.props.data,"========================")
-    this.props.cluster(this.props.data);
+
   }
 
   render() {
@@ -29,7 +28,7 @@ export class Home extends React.Component {
             <label htmlFor="cluster-count">Number of clusters to generate</label>
             <input type="number" className="form-control" name="cluster-count" id="cluster-count" defaultValue={this.props.data.clusterCount} onChange={(e) => this.props.changeClusterCount(e.target.value)}/>
           </div> 
-          <button className="btn btn-primary" type="button" onClick={this.handleSubmit}>CLUSTER!</button>
+          <Link to="/clustered" className="btn btn-primary" type="button" onClick={this.handleSubmit}>CLUSTER!</Link>
         </div>
       </div>
     )

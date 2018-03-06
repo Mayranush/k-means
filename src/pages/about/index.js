@@ -1,25 +1,31 @@
-import React from 'react';
-import {Header} from '../../components/header/header';
-import { connect } from "react-redux";
-import { projectDataActions } from "../../actions/index";
+import React from "react";
+import {Header} from "../../components/header/header";
+import {connect} from "react-redux";
+import {generalActions} from "../../actions/index";
 
 
 export class About extends React.Component {
-  constructor(props) {    
+  constructor(props) {
     super(props);
   }
-  
-  render() {      
+
+  componentDidMount() {
+
+    this.props.cluster(this.props.data);
+  };
+
+  render() {
+    console.log(this.props.result);
     return (
       <div>
-        <Header />    
-        <div>About</div>   
+        <Header />
+        <div></div>
       </div>
     )
   }
 }
-  
+
 export default connect(
-  state => ({ data:  state.projectDataReducer }),
-  { ...projectDataActions }
+  state => ({data: state.general, result: state.result}),
+  {...generalActions}
 )(About);
