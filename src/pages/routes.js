@@ -36,7 +36,7 @@ const routes = {
       }
     },
     {
-      path: 'about',
+      path: 'k-means-result',
       //onEnter: dontRequireAuth,
       getComponent(location, cb) {
         System.import('pages/about')
