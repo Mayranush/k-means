@@ -36,10 +36,10 @@ const routes = {
       }
     },
     {
-      path: 'clustered',
+      path: '/clustered',
       //onEnter: dontRequireAuth,
       getComponent(location, cb) {
-        System.import('pages/about')
+        System.import('pages/clustered')
           .then(loadRoute(cb))
           .catch(errorLoading);
       }
