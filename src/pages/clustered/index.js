@@ -25,11 +25,11 @@ export class Clustered extends React.Component {
     };
     return (
       <div>
-        <BootstrapTable  height={150} data={this.props.result.data} striped={true} hover={true} options={options} search={true}>
+        <BootstrapTable  height={174} data={this.props.result.data} striped={true} hover={true} options={options} search={true}>
           {
             this.props.result.count.map((count) => {
               let sentence = 'sentence' + Number(count);
-              return(<TableHeaderColumn key={count} dataField={sentence} isKey={count == 1 ? true : false} columnTitle>cluster {count}</TableHeaderColumn>);
+              return(<TableHeaderColumn  tdStyle={ {height: '45'} } key={count} dataField={sentence} isKey={count == 1 ? true : false} columnTitle>cluster {count}</TableHeaderColumn>);
             })
           }
         </BootstrapTable>
