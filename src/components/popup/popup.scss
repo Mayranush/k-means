@@ -19,6 +19,21 @@
 	    border-radius: 30px;
     }
 
+    .table-block {
+    	max-width: 80vw;
+    	padding: 30px 30px 20px 30px;
+	    background-color: gray;
+	    opacity: 1 !important;
+	    position: relative;
+	    z-index: 10022222;
+	    color: white;
+	    border-radius: 30px;
+
+	    p {
+	    	word-wrap: break-word;
+	    }
+    }
+
     .close-button {
 	    float: right;
 	    cursor: pointer;

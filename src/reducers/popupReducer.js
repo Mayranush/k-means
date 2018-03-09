@@ -7,12 +7,20 @@ const defaultState = {
     confirmPassword: '',
     passwordErrorText: '',
     show: false,
-    text: ''
+    text: '',
+    tableInfo: []
  };
 
 export default handleActions({
 	[ActionTypes.changePopup]: (state, {payload}) => {
-    	return({...state, text: payload.text, show: payload.show, resetPassword: payload.resetPassword, passwordErrorText: payload.passwordErrorText});  
+    	return({
+            ...state, 
+            text: payload.text, 
+            show: payload.show, 
+            resetPassword: payload.resetPassword, 
+            passwordErrorText: payload.passwordErrorText,
+            tableInfo: payload.tableInfo
+        });  
   	},
     [ActionTypes.getDataRequestChangePassword]: (state) => ({...state}),
     [ActionTypes.passwordChangeInPopup]: (state, {payload}) => {

@@ -1,32 +1,88 @@
 import {ActionTypes} from "../constants/index";
 import {handleActions} from "redux-actions";
 
-const defaultState =[
+const defaultState ={
+  count: [1,2],
+  data: [
     {    
-      "sentence1": "1111111111",
-      "sentence2": "22222222222",
-      "words1": ["Boring1111", "Absolutely"],
-      "vector1": [0, 0, 0, 5],
-      "words2": ["Boring", "Absolutely"],
-      "vector2": [0, 0, 0, 5]
+      "sentence1": "be very detail so sciency i like very thorough in explain the benefit and price it be interesting to see the two brand compare in a visual manner the internet they provide be very fast and I get interested .",
+      "sentence2": "it be a ok ad it be unique and catch my attention informative I like it even tho I do not understand what the scientist be do but the message be clear .",
+      "info1": [{
+        "word": "aaaaaaaaBoring",
+        "vector": 0
+      },
+      {
+        "word": "Boring",
+        "vector": 0
+      },{
+        "word": "Boring",
+        "vector": 0
+      }],
+      "info2": [{
+        "word": "ssssssssssBoring",
+        "vector": 0
+      },
+      {
+        "word": "Boring",
+        "vector": 0
+      },{
+        "word": "Boring",
+        "vector": 0
+      }]      
     },
      {    
-      "sentence1": "aaaaaaaaaa",
-      "sentence2": "bbbbbbbbbbb",
-       "words1": ["Boringaaa", "Absolutely"],
-      "vector1": [0, 0, 0, 5],
-      "words2": ["Boring", "Absolutely"],
-      "vector2": [0, 0, 0, 5]
+      "sentence1": "be very detail so sciency i like very thorough in explain the benefit and price it be interesting to see the two brand compare in a visual manner the internet they provide be very fast and I get interested .",
+      "sentence2": "it be a ok ad it be unique and catch my attention informative I like it even tho I do not understand what the scientist be do but the message be clear .",
+      "info1": [{
+        "word": "xxxxxxxxBoring",
+        "vector": 0
+      },
+      {
+        "word": "Boring",
+        "vector": 0
+      },{
+        "word": "Boring",
+        "vector": 0
+      }],
+      "info2": [{
+        "word": "Boring",
+        "vector": 0
+      },
+      {
+        "word": "Boring",
+        "vector": 0
+      },{
+        "word": "Boring",
+        "vector": 0
+      }]
     },
     {    
-      "sentence1": "77777777777",
-      "sentence2": "8888888888",
-      "words1": ["Boring7777", "Absolutely"],
-      "vector1": [0, 0, 0, 5],
-      "words2": ["Boring", "Absolutely"],
-      "vector2": [0, 0, 0, 5]
+      "sentence1": "be very detail so sciency i like very thorough in explain the benefit and price it be interesting to see the two brand compare in a visual manner the internet they provide be very fast and I get interested .",
+      "sentence2": "it be a ok ad it be unique and catch my attention informative I like it even tho I do not understand what the scientist be do but the message be clear .",
+      "info1": [{
+        "word": "Boring",
+        "vector": 0
+      },
+      {
+        "word": "Boring",
+        "vector": 0
+      },{
+        "word": "Boring",
+        "vector": 0
+      }],
+      "info2": [{
+        "word": "Boring",
+        "vector": 0
+      },
+      {
+        "word": "Boring",
+        "vector": 0
+      },{
+        "word": "Boring",
+        "vector": 0
+      }]
     }
-    ];
+  ]};
 
   
   // data: [

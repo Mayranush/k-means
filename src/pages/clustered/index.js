@@ -19,27 +19,19 @@ export class Clustered extends React.Component {
     let self = this;
     let options = {
       onRowClick: function(row, columnIndex) {
-        let words = 'words' + Number(columnIndex+1);
-        let vector = 'vector' + Number(columnIndex+1);
-        console.log(row,columnIndex,"row-------------------")
-        console.log(row[words],row[vector],"row-------------------")
-
-        self.props.changePopup(row[words], true, false, '');
+        let info = 'info' + Number(columnIndex+1);
+        self.props.changePopup('info', true, false, '', row[info]);
       }
     };
     return (
       <div>
-        <BootstrapTable data={this.props.result} striped={true} hover={true} options={options}>
-            
-          <TableHeaderColumn 
-            dataField="sentence1"
-            isKey={true}
-            dataAlign="center" 
-            dataSort={true}>
-              1
-          </TableHeaderColumn>
-          <TableHeaderColumn dataField="sentence2" dataSort={true}>2</TableHeaderColumn>
-  
+        <BootstrapTable data={this.props.result.data} striped={true} hover={true} options={options}>
+          {
+            this.props.result.count.map((count) => {
+              let sentence = 'sentence' + Number(count);
+              return(<TableHeaderColumn key={count} dataField={sentence} isKey={count == 1 ? true : false}>cluster {count}</TableHeaderColumn>);
+            })
+          }
         </BootstrapTable>
       </div>
     )

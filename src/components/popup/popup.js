@@ -1,6 +1,7 @@
 import React from "react";
 import "./popup.scss";
 import PropTypes from "prop-types";
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 export class Popup extends React.Component {
   constructor(props) {
@@ -44,9 +45,15 @@ export class Popup extends React.Component {
     console.log(this.props,"props in popup")
     return (
       <div className="general-div">
-        {this.props.popup.text && <div className="text-block">
+        {this.props.popup.text && <div className={this.props.popup.tableInfo ? "table-block" : "text-block"}>
           <p>{this.props.popup.text}</p>
-          <div className="close-button close-ok" onClick={() => this.props.closePopup()}>ok</div>
+          {this.props.popup.tableInfo &&
+            <BootstrapTable data={this.props.popup.tableInfo}>
+              <TableHeaderColumn dataField="word" isKey={true}> word </TableHeaderColumn>
+              <TableHeaderColumn dataField="vector">count</TableHeaderColumn>
+            </BootstrapTable>  
+          }       
+        <div className="close-button close-ok" onClick={() => this.props.closePopup()}>ok</div>
         </div>}
         {this.props.popup.resetPassword && <div className="pop-pass-change">
           <form>
