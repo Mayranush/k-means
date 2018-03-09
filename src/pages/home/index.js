@@ -11,6 +11,7 @@ export class Home extends React.Component {
   }
 
   handleSubmit() {
+    this.props.cluster(this.props.data);
 
   }
 
@@ -28,7 +29,7 @@ export class Home extends React.Component {
             <label htmlFor="cluster-count">Number of clusters to generate</label>
             <input type="number" className="form-control" name="cluster-count" id="cluster-count" defaultValue={this.props.data.clusterCount} onChange={(e) => this.props.changeClusterCount(e.target.value)}/>
           </div> 
-          <Link to="/clustered" className="btn btn-primary" type="button" onClick={this.handleSubmit}>CLUSTER!</Link>
+          <button className="btn btn-primary" type="button" onClick={this.handleSubmit}>CLUSTER!</button>
         </div>
       </div>
     )

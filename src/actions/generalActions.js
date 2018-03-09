@@ -3,7 +3,9 @@ import ActionTypes from "../constants/actionTypes";
 import store from "store";
 import {tools} from "../resources";
 import api from "../api/api";
-import {changePopup} from "./popupActions"; 
+import {changePopup} from "./popupActions";
+import {push} from "react-router-redux";
+
 
 export const cleanData = createAction(ActionTypes.cleanData);
 
@@ -16,7 +18,15 @@ export const changeClusterCount = createAction(ActionTypes.changeClusterCount);
 ////////////////////////////////////////post cluster//////////////
 
 export const getDataRequestCluster = createAction(ActionTypes.getDataRequestCluster);
-export const getDataResponseCluster = createAction(ActionTypes.getDataResponseCluster);
+ const getDataResponseCluster1 = createAction(ActionTypes.getDataResponseCluster);
+
+export function getDataResponseCluster(data) {
+  return (dispatch) => {
+    store.dispatch(push('/clustered'));
+
+    return dispatch(getDataResponseCluster1(data));
+  };
+}
 export const getDataResponseErrorCluster = createAction(ActionTypes.getDataResponseErrorCluster);
 
 
