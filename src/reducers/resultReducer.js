@@ -1,10 +1,9 @@
 import {ActionTypes} from "../constants/index";
 import {handleActions} from "redux-actions";
 
-const defaultState ={
-  data: []
-};
-
+const defaultState = {
+    data: []
+}
 
 
 export default handleActions({

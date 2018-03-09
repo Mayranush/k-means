@@ -42,7 +42,6 @@ export class Popup extends React.Component {
   };
 
   render() {
-    console.log(this.props,"props in popup")
     return (
       <div className="general-div">
         {this.props.popup.text && <div className={this.props.popup.tableInfo ? "table-block" : "text-block"}>
@@ -66,7 +65,6 @@ export class Popup extends React.Component {
                     onKeyUp={(e) => this.handlePasswordChange(e)}/>
                      <p
                       className="error-for-input-popup">{this.props.popup.passwordErrorText.length != 0 ? '*' + this.props.popup.passwordErrorText : ''}</p>
-
                 </div>
                 <div className="col-md-6">
                   <input
