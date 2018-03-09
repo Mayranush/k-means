@@ -48,7 +48,7 @@ export class Popup extends React.Component {
         {this.props.popup.text && <div className={this.props.popup.tableInfo ? "table-block" : "text-block"}>
           <p>{this.props.popup.text}</p>
           {this.props.popup.tableInfo &&
-            <BootstrapTable data={this.props.popup.tableInfo}>
+            <BootstrapTable height={400} data={this.props.popup.tableInfo}>
               <TableHeaderColumn dataField="word" isKey={true}> word </TableHeaderColumn>
               <TableHeaderColumn dataField="vector">count</TableHeaderColumn>
             </BootstrapTable>  
