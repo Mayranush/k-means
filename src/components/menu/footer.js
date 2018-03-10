@@ -7,7 +7,7 @@ const Footer = (...props) => {
   	<footer className="sticky-footer">
 		<div className="container">
 		  <div className="text-center">
-		    <small>Copyright © Your Website 2017</small>
+		    <small>Copyright © Hrant Vardanyan 2018</small>
 		  </div>
 		</div>
 	</footer>

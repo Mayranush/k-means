@@ -12,11 +12,13 @@ export class Clustered extends React.Component {
     let options = {
       onRowClick: function (row, columnIndex) {
         let info = [];
-        row.words.map((v,i) => { 
-          row.vector.map((k,j) => {
-            if (i===j){
+        let words="words"+columnIndex;
+        let vector="vector"+columnIndex;
+        row[words].map((v, i) => {
+          row[vector].map((k, j) => {
+            if (i === j) {
               let newObj = new Object();
-              newObj.word = v;    
+              newObj.word = v;
               newObj.vector = k;
               info.push(newObj);
             }
@@ -25,20 +27,22 @@ export class Clustered extends React.Component {
         self.props.changePopup('info', true, false, '', info);
       }
     };
-    let width = (window.innerWidth - 17 ) / this.props.result.data.length;
+
     return (
-      <div>
-        { this.props.result.data.map((item, i) => {
-          return (
-            <div key={i} style={{"width": width, "float": "left"}}>
-              <BootstrapTable height={174} data={item.sentences} striped={true} hover={true} options={options}>
-                <TableHeaderColumn tdStyle={ {height: 45} } dataField="sentence" isKey={true}>
-                  Cluster {item.cluster}
-                </TableHeaderColumn>
-              </BootstrapTable>
-            </div>
-          )
-        })}
+      <div className="tbl">
+        <BootstrapTable tableStyle={{width: 'calc(100vw - 150px )'}} height={170} data={this.props.result.data} striped={true}
+                        hover={true}
+                        options={options} exportCSV>
+          {   this.props.result.clusters.map((item,i) => {
+            return (
+              <TableHeaderColumn thStyle={ {whiteSpace:'normal', width: 'calc((100vw - 150px)/5 )', maxHeight: '50px'} }
+                                 tdStyle={ { width: 'calc((100vw - 150px)/5 )', maxHeight: '50px'} }
+                                 key={i}
+                                 dataField={"sentence" + i} isKey={i === 0 ? true : false} columnTitle={true}>
+                { "Sentence Cluster " + (i + 1)+" ("+item+")"}
+              </TableHeaderColumn>)
+          })}
+        </BootstrapTable>
       </div>
     )
   }

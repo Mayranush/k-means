@@ -3,6 +3,9 @@ body, html, #root, #root>div, .viewport {
   width: 100vw;
   height: 100vh;
 }
+.tbl{
+  margin: 15px 10px 10px 10px;
+}
 
 .cluster-form {
 	display: flex;
@@ -26,7 +29,7 @@ body, html, #root, #root>div, .viewport {
     }
 
     .btn-primary {
-    	margin:20px;
+    	margin:20px 0 50px 0;
     	cursor: pointer;
     }
 }

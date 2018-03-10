@@ -2,14 +2,16 @@ import {ActionTypes} from "../constants/index";
 import {handleActions} from "redux-actions";
 
 const defaultState = {
-    data: []
+  data: [],
+  clusters: []
+
 }
 
 
 export default handleActions({
 
   [ActionTypes.getDataResponseCluster]: (state, {payload}) => {
-    return ({...state, data: payload});
+    return ({...state, data: payload.newData, clusters: payload.clusters});
   },
 
 
