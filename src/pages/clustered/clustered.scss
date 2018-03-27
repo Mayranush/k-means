@@ -1,0 +1,29 @@
+
+.tbl {
+  margin: 15px 10px 50px 10px;
+  //border: 2px solid;
+  height: 214px;
+  resize: both;
+  overflow: auto;
+  width: calc(100vw - 150px);
+  //overflow-x: hidden;
+
+  .react-bs-table .table-bordered {
+    //overflow-x: hidden;
+    //.react-bs-container-body
+    //
+    border-top: 1px solid #ddd;
+
+  }
+
+  .react-bs-container-header, .react-bs-container-body {
+    overflow: unset;
+  }
+
+  .react-bs-table-bordered {
+    border: none;
+  }
+}
+.export-to-excel{
+  margin: 10px;
+}

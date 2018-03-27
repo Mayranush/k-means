@@ -12,12 +12,12 @@ let addHeaders = (token) => {
 
   if (token) {
     api = axios.create({
-      baseURL: "http://localhost:8081",
+      baseURL:  "http://46.101.42.31:8081",//"http://46.101.42.31:8081",//
       headers: {"Authorization": tokenFromStore}
     });
   } else {
     api = axios.create({
-      baseURL: "http://localhost:8081"
+      baseURL: "http://46.101.42.31:8081"
     });
   }
 
@@ -28,9 +28,14 @@ const cluster = (obj) => {
   addHeaders(false);
   return api.post("/api/cluster", obj);
 };
+const exportToExcel = () => {
+  addHeaders(false);
+  return api.get("/api/export");
+};
 
 
 export default {
-  cluster
+  cluster,
+  exportToExcel
 };
 
