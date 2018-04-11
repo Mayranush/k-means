@@ -11,7 +11,9 @@ export const cleanData = createAction(ActionTypes.cleanData);
 export const changeText = createAction(ActionTypes.changeText);
 export const changeStopWords = createAction(ActionTypes.changeStopWords);
 export const changeLemmatize = createAction(ActionTypes.changeLemmatize);
+export const changeKMeans = createAction(ActionTypes.changeKMeans);
 export const changeClusterCount = createAction(ActionTypes.changeClusterCount);
+export const changeSimCoefficient = createAction(ActionTypes.changeSimCoefficient);
 
 ////////////////////////////////////////post cluster//////////////
 

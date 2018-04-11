@@ -5,7 +5,9 @@ const ActionTypes = {
 	changeText: "CHANGE_TEXT",
 	changeStopWords: "CHANGE_STOP_WORDS",
 	changeLemmatize: "CHANGE_LEMMATIZE",
+  changeKMeans: "CHANGE_KMEANS",
 	changeClusterCount: "CHANGE_CLUSTER_COUNT",
+  changeSimCoefficient: "CHANGE_SIM_COEFFICENT",
 
 	getDataRequestCluster: "GET_DATA_REQUEST_CLUSTER",
 	getDataResponseCluster: "GET_DATA_RESPONSE_CLUSTER",
