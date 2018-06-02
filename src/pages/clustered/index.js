@@ -18,6 +18,7 @@ export class Clustered extends React.Component {
   }
 
   render() {
+
     let self = this;
     let infoMessage;
     let infoMessageSentenceLemmatized;
@@ -57,6 +58,7 @@ export class Clustered extends React.Component {
                           striped={true}
                           hover={true}
                           options={options}>
+            <TableHeaderColumn autoValue={true} dataField='_id' isKey={true} hidden={true}>Id</TableHeaderColumn>
             {   this.props.result.clusters.map((item, i) => {
               return (
                 <TableHeaderColumn
@@ -67,7 +69,7 @@ export class Clustered extends React.Component {
                   } }
                   tdStyle={ {width: 'calc((100vw - 150px)/5 )', height: '40px'} }
                   key={i}
-                  dataField={"cluster" + i} isKey={i === 0 ? true : false} columnTitle={true}>
+                  dataField={"cluster" + i}  columnTitle={true}>
                   { "Sentence Cluster " + (i + 1) + " (" + item + ")"}
                 </TableHeaderColumn>)
             })}

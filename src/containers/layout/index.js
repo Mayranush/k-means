@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import "./style.scss";
 import {Menu} from "../../components/menu/menu";
 import {Footer} from "../../components/menu/footer";
-import {passwordForgetActions, generalActions, signUpActions, popupActions} from "../../actions/index";
+import {Loader} from "../../components/loader/loader";
+import { generalActions, popupActions} from "../../actions/index";
 import {Popup} from "../../components/popup/popup";
 
 class MainLayout extends React.Component {
@@ -23,6 +24,7 @@ class MainLayout extends React.Component {
   }
 
   render() {
+
     return (
       <main className="viewport">
         {this.props.popup.show &&
@@ -32,6 +34,8 @@ class MainLayout extends React.Component {
             confirmChangeInPopup={this.props.confirmChangeInPopup}
             passwordChangeInPopup={this.props.passwordChangeInPopup}
             changeAndResetPassword={this.props.changeAndResetPassword} />}
+        {this.props.result.loader &&
+        <Loader loader={this.props.result.loader}/>}
           <Menu cleanData={this.props.cleanData} />
           {this.props.children}
           <Footer />
@@ -41,7 +45,7 @@ class MainLayout extends React.Component {
 }
 
 export default connect(
-  state => ({data: state.general, popup: state.popup}),
+  state => ({data: state.general, popup: state.popup, result: state.result}),
   {
     ...generalActions,
     ...popupActions

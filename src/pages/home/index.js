@@ -9,6 +9,7 @@ export class Home extends React.Component {
   }
 
   handleSubmit() {
+
     this.props.cluster(this.props.data);
   }
 

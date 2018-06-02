@@ -17,12 +17,20 @@ export const changeSimCoefficient = createAction(ActionTypes.changeSimCoefficien
 
 ////////////////////////////////////////post cluster//////////////
 
-export const getDataRequestCluster = createAction(ActionTypes.getDataRequestCluster);
+const getDataRequestClusterFunc = createAction(ActionTypes.getDataRequestCluster);
+export function getDataRequestCluster() {
+  return (dispatch) => {
+    let loader = true;
+
+    return dispatch(getDataRequestClusterFunc(loader));
+  };
+}
+
 const getDataResponseCluster1 = createAction(ActionTypes.getDataResponseCluster);
 
 export function getDataResponseCluster(data) {
   return (dispatch) => {
-    console.log(data, "data");
+    let loader = false;
     store.dispatch(push('/clustered'));
     let down_url = data.down_url;
     let newData = [];
@@ -58,9 +66,10 @@ export function getDataResponseCluster(data) {
       });
       newData.push(newObj);
     });
-    return dispatch(getDataResponseCluster1({newData, clusters, down_url}));
+    return dispatch(getDataResponseCluster1({newData, clusters, down_url, loader}));
   };
 }
+
 export const getDataResponseErrorCluster = createAction(ActionTypes.getDataResponseErrorCluster);
 
 
